@@ -20,9 +20,9 @@ public class LoadBalancerController {
     }
 
     // Endpoint  to forward request to backend servers.
-    @GetMapping("/forward/{path}")
-    public String forwardRequest(@PathVariable String path){
-        return loadBalancerService.forwardRequest("/" + path);
+    @GetMapping("/forward/{path1}/{path2}")
+    public String forwardRequest(@PathVariable String path1, @PathVariable String path2){
+        return loadBalancerService.forwardRequest("/" + path1 + "/" + path2);
     }
 
     @GetMapping("/status")
